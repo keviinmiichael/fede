@@ -1,0 +1,67 @@
+input[disabled] {background-color: #efefef !important; cursor: not-allowed !important}
+.smart-form fieldset+fieldset {border-top: none}
+
+/*summernote*/
+.note-codeable {display: none}
+.note-editable {padding: 10px}
+.note-editor {
+    border: 1px solid #a9a9a9;
+}
+.note-editor .note-toolbar {
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin: 0;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #a9a9a9;
+}
+.note-editor .note-toolbar>.btn-group {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 0;
+}
+.note-editor .note-statusbar {
+    background-color: #f5f5f5;
+}
+.note-editor .note-statusbar .note-resizebar {
+    border-top: 1px solid #DBDBDB;
+}
+.note-editor .note-statusbar .note-resizebar {
+    width: 100%;
+    height: 8px;
+    cursor: s-resize;
+}
+.note-editor .note-statusbar .note-resizebar .note-icon-bar {
+    width: 20px;
+    margin: 1px auto;
+    border-top: 1px solid #a9a9a9;
+}
+.note-editor ul {padding-left: 40px !important;}
+
+/* nav */
+.login-info p {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.minified .login-info p {
+    display: none
+}
+
+/*SLIDER*/
+.superbox-list {vertical-align: top;}
+.superbox-list a.btn-danger, .superbox-list a:active.btn-danger  {position: absolute; right: 6px; bottom: 6px}
+.superbox-list a.btn-primary, .superbox-list a:active.btn-primary {position: absolute; right: 45px; bottom: 6px}
+.superbox-list a.hide {display: block !important}
+.superbox-list .btn:active {position: absolute; top: inherit !important; left: inherit !important}
+.superbox-img {cursor: move; min-height: 32px;}
+.superbox-img:hover {opacity: 1}
+.ui-sortable-placeholder {height: auto !important; visibility: visible !important; vertical-align: top;}
+.ui-sortable-placeholder::before {content: ''; display: block; outline: 1px dashed #a8a8a8; width: 100%; padding-top: 100%; box-sizing: border-box;}
+#sliderImagenes .empty {margin: 60px 0; font-size: 24px; text-align: center}
+
+/*FIN SLIDER*/
+
+.dataTable .label {cursor: pointer}
+.dataTable td:last-child, .dataTable th:last-child {text-align: right;}
+.dataTable td.dataTables_empty {text-align: center;}

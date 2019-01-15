@@ -1,0 +1,8 @@
+.offcanvas-container {
+	z-index: 2
+}
+
+ .shopping-cart .product-item .product-info {
+ 	display: table-cell;
+ 	vertical-align: middle;
+ }
