@@ -6,7 +6,7 @@ Route::get('test/email', function () {
     \Mail::to('maxiyanez84@gmail.com')->send(new TestMail);
 });
 
-Route::view('/', 'welcome');
+Route::view('/', 'index');
 
 // Authentication
 Route::group(['namespace' => 'Auth', 'prefix' => 'admin'], function()
@@ -86,7 +86,10 @@ Route::group(['namespace' => 'Front'], function()
 {
     //statics
     Route::get('/', 'HomeController');
-    Route::view('aboutus', 'front.static.aboutus');
+    Route::view('/aboutus', 'front.static.aboutus');
+    Route::view('/tattoo', 'front.static.tattoo');
+    Route::view('/graffiti', 'front.static.graffiti');
+    Route::view('/serigrafia', 'front.static.serigrafia');
     Route::view('faq', 'front.static.faq');
     // Route::view('metodos', 'front.static.methods');
 

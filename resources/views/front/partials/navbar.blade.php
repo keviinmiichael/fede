@@ -1,60 +1,38 @@
-<!-- Off-Canvas Category Menu-->
-    <div class="offcanvas-container" id="shop-categories">
-      <div class="offcanvas-header">
-        <h3 class="offcanvas-title">Categorías</h3>
-      </div>
-      <nav class="offcanvas-menu">
+<!-- NAVIGATION -->
+<nav class="navbar navbar-custom navbar-transparent navbar-light navbar-fixed-top">
 
-        <ul class="menu">
-          @foreach ($categories as $category)
-            <li class="{{$category->subcategories->count() > 0 ? 'has-children' : ''}}">
-              <span>
-                <a href="{{$category->slug}}">{{ $category->value }}</a>
-                @if ($category->subcategories->count())
-                  <span class="sub-menu-toggle"></span>
-                @endif
-              </span>
-                @if ($category->subcategories->count())
-                  <ul class="offcanvas-submenu">
-                    @foreach ($category->subcategories as $subcategory)
-                      <li><a href="{{$subcategory->slug}}">{{ $subcategory->value }}</a></li>
-                    @endforeach
-                  </ul>
-                @endif
-            </li>
-          @endforeach
-        </ul>
-      </nav>
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- YOU LOGO HERE -->
+      <a class="navbar-brand" href="/">
+        <!-- IMAGE OR SIMPLE TEXT -->
+        <img src="/img/front/logo-dark.png" width="95" alt="">
+      </a>
     </div>
 
-    <!-- Off-Canvas Mobile Menu-->
-    <div class="offcanvas-container" id="mobile-menu">
-      <nav class="offcanvas-menu">
-        <ul class="menu">
-          @foreach ($categories as $category)
-            <li class="{{$category->subcategories->count() > 0 ? 'has-children' : ''}}">
-              <span>
-                <a href="{{$category->slug}}">{{ $category->value }}</a>
-                @if ($category->subcategories->count())
-                  <span class="sub-menu-toggle"></span>
-                @endif
-              </span>
-                @if ($category->subcategories->count())
-                  <ul class="offcanvas-submenu">
-                    @foreach ($category->subcategories as $subcategory)
-                      <li><a href="{{$subcategory->slug}}">{{ $subcategory->value }}</a></li>
-                    @endforeach
-                  </ul>
-                @endif
-            </li>
-          @endforeach
-        </ul>
-      </nav>
-    </div>
-    <!-- Topbar-->
+    <!-- ICONS NAVBAR -->
+    <ul id="icons-navbar" class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#" id="toggle-menu" class="show-overlay" title="Menu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+      </li>
+    </ul>
+    <!-- /ICONS NAVBAR -->
 
-    <div class="topbar" style="height: 0">
-      
-    </div>
-    <!-- Navbar-->
-    <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+    <ul class="extra-navbar nav navbar-nav navbar-right">
+  <!--    <li><a href="index.html" title="Home">Home</a></li> -->
+      <li><a href="tattoo" title="About">Tattoo</a></li>
+      <li><a href="serigrafia" title="About">Serigrafia</a></li>
+      <li><a href="graffiti" title="About">Graffiti</a></li>
+      <li><a href="aboutus" title="About">Nosotros</a></li>
+      <li><a href="contact.html" title="Contact">Contacto</a></li>
+    </ul>
+
+  </div>
+
+</nav>
+<!-- /NAVIGATION -->

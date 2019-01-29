@@ -1,67 +1,252 @@
 @extends('front.app')
 
 @section('content')
-    @include('front.partials.home.slider')
 
-      <!-- Featured Products Carousel-->
-      <section class="container padding-top-3x padding-bottom-3x">
-        <h3 class="text-center mb-30">Featured Products</h3>
-        <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;margin&quot;: 30, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;576&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3},&quot;991&quot;:{&quot;items&quot;:4},&quot;1200&quot;:{&quot;items&quot;:4}} }">
-          <!-- Product-->
-          @foreach ($products as $product)
-                <div class="grid-item">
-                  <div class="product-card">
-                      @if ($product->discount)
-                          <div class="product-badge text-danger">{{$product->discount}}% Off</div>
-                      @endif
-                    <a class="product-thumb" href="{{$product->getPath()}}"><img src="/content/products/250x320/{{$product->getThumbAttribute()}}" alt="Product"></a>
-                    <h3 class="product-title"><a href="{{$product->getPath()}}">{{$product->name}}</a></h3>
-                    <h4 class="product-price">
-                        @if ($product->calculatePrice() != $product->getDiscountPriceAttribute())
-                            <del>${{$product->calculatePrice()}}</del>${{$product->getDiscountPriceAttribute()}}
-                        @else
-                            ${{$product->calculatePrice()}}
-                        @endif
-                    </h4>
-                    <div class="product-buttons">
-                      <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
-                      <button data-id="{{$product->id}}" class="btn btn-outline-primary btn-sm addToCart" data-toast data-toast-type="success" data-toast-position="bottomRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="El producto fue agregado al carrito.">
-                          Agregar al carrito
-                          <span class="fa fa-spin fa-spinner" style="display: none"></span>
-                      </button>
-                    </div>
-                  </div>
+  <!-- HERO -->
+  <section id="hero" class="module-hero module-full-height">
+
+    <div id="slides">
+
+      <ul class="slides-container">
+
+        <li class="bg-light bg-film">
+          <img src="/img/front/section-6.jpg" alt="">
+
+          <!-- HERO TEXT -->
+          <div class="hero-caption">
+            <div class="hero-text">
+              <h1 class="mh-line-size-1 font-alt m-b-50 wow fadeInDown">Superslides</h1>
+              <h5 class="mh-line-size-5 font-alt wow fadeInDown" data-wow-delay="0.7s">Create your own animation of text </h5>
+            </div>
+          </div>
+          <!-- /HERO TEXT -->
+        </li>
+
+        <li class="bg-light-30">
+          <img src="/img/front/section-3.jpg" alt="">
+
+          <!-- HERO TEXT -->
+          <div class="hero-caption">
+            <div class="hero-text">
+              <h1 class="mh-line-size-2 font-alt m-b-50 wow bounceInDown">Superslides support</h1>
+              <h5 class="mh-line-size-5 font-alt wow bounceInLeft" data-wow-delay="0.7s">More than 50 css animations</h5>
+            </div>
+          </div>
+          <!-- /HERO TEXT -->
+        </li>
+
+        <li class="bg-dark bg-dark-30">
+          <img src="/img/front/section-14.jpg" alt="">
+
+          <!-- HERO TEXT -->
+          <div class="hero-caption">
+            <div class="hero-text">
+              <h5 class="mh-line-size-5 font-alt m-b-50 wow rotateIn">Present yourself</h5>
+              <h1 class="mh-line-size-3 font-alt wow rotateInUpRight" data-wow-delay="0.7s">Build your own style</h1>
+            </div>
+          </div>
+          <!-- /HERO TEXT -->
+        </li>
+
+      </ul>
+
+      <nav class="slides-navigation">
+        <a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+        <a href="#" class="prev"><i class="fa fa-angle-left"></i></a>
+      </nav>
+
+    </div>
+
+  </section>
+  <!-- /HERO -->
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="module">
+
+    <div class="container">
+
+      <!-- FILTER -->
+      <div class="row">
+
+        <div class="col-sm-12">
+          <ul id="filters" class="filters font-alt">
+            <li><a href="#" data-filter="*" class="current">All <sup><small>.355</small></sup></a></li>
+            <li><a href="#" data-filter=".branding">Branding <sup><small>.78</small></sup></a></li>
+            <li><a href="#" data-filter=".design">Design <sup><small>.123</small></sup></a></li>
+            <li><a href="#" data-filter=".photo">Photo <sup><small>.144</small></sup></a></li>
+            <li><a href="#" data-filter=".web">Web <sup><small>.140</small></sup></a></li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- /FILTER -->
+
+      <!-- WORKS GRID -->
+      <div class="row">
+
+        <div id="works-grid" class="works-grid works-hover-w">
+
+          <!-- DO NOT DELETE THIS DIV -->
+          <div class="grid-sizer"></div>
+
+          <!-- PORTFOLIO ITEM -->
+          <div class="work-item tall branding">
+            <a href="portfolio-single-1.html">
+              <img src="/img/front/portfolio/img-1.jpg" alt="">
+              <div class="work-caption font-alt">
+                <h3 class="work-title">The GreenHouse Studio</h3>
+                <div class="work-descr">
+                  Branding
                 </div>
-            @endforeach
-        </div>
-      </section>
+              </div>
+            </a>
+          </div>
+          <!-- /PORTFOLIO ITEM -->
 
-      <!-- Popular Brands-->
-      <section class="bg-faded padding-top-3x padding-bottom-3x">
-        <div class="container">
-          <h3 class="text-center mb-30 pb-2">Popular Brands</h3>
-          <div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: false, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 4000, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:2}, &quot;470&quot;:{&quot;items&quot;:3},&quot;630&quot;:{&quot;items&quot;:4},&quot;991&quot;:{&quot;items&quot;:5},&quot;1200&quot;:{&quot;items&quot;:6}} }"><img class="d-block w-110 opacity-75 m-auto" src="/img/template/brands/01.png" alt="Adidas"><img class="d-block w-110 opacity-75 m-auto" src="/img/template/brands/02.png" alt="Brooks"><img class="d-block w-110 opacity-75 m-auto" src="/img/template/brands/03.png" alt="Valentino"><img class="d-block w-110 opacity-75 m-auto" src="/img/template/brands/04.png" alt="Nike"><img class="d-block w-110 opacity-75 m-auto" src="/img/template/brands/05.png" alt="Puma"><img class="d-block w-110 opacity-75 m-auto" src="/img/template/brands/06.png" alt="New Balance"><img class="d-block w-110 opacity-75 m-auto" src="/img/template/brands/07.png" alt="Dior"></div>
+          <!-- PORTFOLIO ITEM -->
+          <div class="work-item design">
+            <a href="portfolio-single-1.html">
+              <img src="/img/front/portfolio/img-2.jpg" alt="">
+              <div class="work-caption font-alt">
+                <h3 class="work-title">The languages only</h3>
+                <div class="work-descr">
+                  Design
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- /PORTFOLIO ITEM -->
+
+          <!-- PORTFOLIO ITEM -->
+          <div class="work-item design">
+            <a href="portfolio-single-1.html">
+              <img src="/img/front/portfolio/img-3.jpg" alt="">
+              <div class="work-caption font-alt">
+                <h3 class="work-title">Everyone realizes</h3>
+                <div class="work-descr">
+                  Design
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- /PORTFOLIO ITEM -->
+
+          <!-- PORTFOLIO ITEM -->
+          <div class="work-item design">
+            <a href="portfolio-single-1.html">
+              <img src="/img/front/portfolio/img-4.jpg" alt="">
+              <div class="work-caption font-alt">
+                <h3 class="work-title">Corporate Identity</h3>
+                <div class="work-descr">
+                  Design
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- /PORTFOLIO ITEM -->
+
+          <!-- PORTFOLIO ITEM -->
+          <div class="work-item design">
+            <a href="portfolio-single-1.html">
+              <img src="/img/front/portfolio/img-5.jpg" alt="">
+              <div class="work-caption font-alt">
+                <h3 class="work-title">Cambridge friend</h3>
+                <div class="work-descr">
+                  Design
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- /PORTFOLIO ITEM -->
+
+          <!-- PORTFOLIO ITEM -->
+          <div class="work-item wide-tall branding photo web">
+            <a href="portfolio-single-1.html">
+              <img src="/img/front/portfolio/img-6.jpg" alt="">
+              <div class="work-caption font-alt">
+                <h3 class="work-title">The grammar of the resulting language</h3>
+                <div class="work-descr">
+                  Branding / Photo / Web
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- /PORTFOLIO ITEM -->
+
+          <!-- PORTFOLIO ITEM -->
+          <div class="work-item wide design photo web">
+            <a href="portfolio-single-1.html">
+              <img src="/img/front/portfolio/img-7.jpg" alt="">
+              <div class="work-caption font-alt">
+                <h3 class="work-title">A collection of textile samples</h3>
+                <div class="work-descr">
+                  Design / Photo / Web
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- /PORTFOLIO ITEM -->
+
+          <!-- PORTFOLIO ITEM -->
+          <div class="work-item branding photo">
+            <a href="portfolio-single-1.html">
+              <img src="/img/front/portfolio/img-8.jpg" alt="">
+              <div class="work-caption font-alt">
+                <h3 class="work-title">Gregor then turned</h3>
+                <div class="work-descr">
+                  Branding / Photo
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- /PORTFOLIO ITEM -->
+
+          <!-- PORTFOLIO ITEM -->
+          <div class="work-item branding photo">
+            <a href="portfolio-single-1.html">
+              <img src="/img/front/portfolio/img-9.jpg" alt="">
+              <div class="work-caption font-alt">
+                <h3 class="work-title">He must have tried it</h3>
+                <div class="work-descr">
+                  Branding / Photo
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- /PORTFOLIO ITEM -->
+
+          <!-- PORTFOLIO ITEM -->
+          <div class="work-item wide design web">
+            <a href="portfolio-single-1.html">
+              <img src="/img/front/portfolio/img-10.jpg" alt="">
+              <div class="work-caption font-alt">
+                <h3 class="work-title">However hard he threw himself</h3>
+                <div class="work-descr">
+                  Design / Web
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- /PORTFOLIO ITEM -->
+
         </div>
-      </section>
-      <!-- Services-->
-      <section class="container padding-top-3x padding-bottom-2x">
-        <div class="row">
-          <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="/img/template/services/01.png" alt="Shipping">
-            <h6>Free Worldwide Shipping</h6>
-            <p class="text-muted margin-bottom-none">Free shipping for all orders over $100</p>
-          </div>
-          <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="/img/template/services/02.png" alt="Money Back">
-            <h6>Money Back Guarantee</h6>
-            <p class="text-muted margin-bottom-none">We return money within 30 days</p>
-          </div>
-          <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="/img/template/services/03.png" alt="Support">
-            <h6>24/7 Customer Support</h6>
-            <p class="text-muted margin-bottom-none">Friendly 24/7 customer support</p>
-          </div>
-          <div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="/img/template/services/04.png" alt="Payment">
-            <h6>Secure Online Payment</h6>
-            <p class="text-muted margin-bottom-none">We posess SSL / Secure Certificate</p>
-          </div>
+
+      </div>
+      <!-- /WORKS GRID -->
+
+      <!-- SHOW MORE -->
+      <div class="row m-t-70 text-center wow fadeInUp">
+        <div class="col-sm-12">
+
+          <button id="show-more" class="btn btn-block btn-lg btn-g show-more">More works</button>
+
         </div>
-      </section>
+      </div>
+      <!-- /SHOW MORE -->
+
+    </div>
+
+  </section>
+  <!-- /PORTFOLIO -->
+
 @endsection

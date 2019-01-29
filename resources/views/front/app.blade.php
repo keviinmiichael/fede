@@ -5,19 +5,22 @@
     @yield('head')
 </head>
 <body>
-    @include('front.partials.navbar')
-
-    @include('front.partials.header')
-
-	<div class="offcanvas-wrapper">
-
-		@yield('content')
+    @include('front.partials.overlay-menu')
+    <div class="wrapper">
+      @include('front.partials.navbar')
 
 
-        @include('front.partials.footer')
+
+      @yield('content')
+
+
+      @include('front.partials.footer')
+
+
 
     </div>
-    <div class="site-backdrop"></div>
+
+    @include('front.partials.scroll-up')
 
     @include('front.partials.scripts')
 

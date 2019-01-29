@@ -171,7 +171,6 @@ return [
         SantiGraviano\LaravelMercadoPago\Providers\MercadoPagoServiceProvider::class,
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...

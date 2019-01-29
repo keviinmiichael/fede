@@ -1,26 +1,29 @@
-<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <meta charset="utf-8">
-    <meta name="_token" content="{{csrf_token()}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Kamecode">
-    <META NAME="ROBOTS" CONTENT="index,follow">
-    <META NAME="COUNTRY" CONTENT="ARGENTINA">
-    <meta name="contact" content="info@tujardinonline.com.ar" />
-    <meta charset="utf-8">
-    <title>Unishop | Universal E-Commerce Template</title>
-    <!-- SEO Meta Tags-->
-    <meta name="description" content="Unishop - Universal E-Commerce Template">
-    <!-- Mobile Specific Meta Tag-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Favicon and Apple Icons-->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="img/front/favicon.png">
-    <!-- Vendor Styles including: Bootstrap, Font Icons, Plugins, etc.-->
-    <link rel="stylesheet" media="screen" href="/css/vendor.min.css">
-    <!-- Main Template Styles-->
-    <link id="mainStyles" rel="stylesheet" media="screen" href="/css/styles.min.css">
-    <!-- Modernizr-->
-    <script src="/js/modernizr.min.js"></script>
-    <link rel="stylesheet" href="/css/custom.css">
-</head>
+<title>GreenHouse Studio</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="img/front/favicon.png">
+<link rel="apple-touch-icon" href="img/front/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/front/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/front/apple-touch-icon-114x114.png">
+
+<!-- Bootstrap core CSS -->
+<link href="/css/front/bootstrap.min.css" rel="stylesheet">
+
+<!-- Plugins -->
+<link href="/css/front/font-awesome.min.css" rel="stylesheet">
+<link href="/css/front/linea-icons.css" rel="stylesheet">
+<link href="/css/front/ionicons.min.css" rel="stylesheet">
+<link href="/css/front/simpletextrotator.css" rel="stylesheet">
+<link href="/css/front/magnific-popup.css" rel="stylesheet">
+<link href="/css/front/owl.carousel.css" rel="stylesheet">
+<link href="/css/front/superslides.css" rel="stylesheet">
+<link href="/css/front/vertical.css" rel="stylesheet">
+<link href="/css/front/animate.css" rel="stylesheet">
+
+<!-- Template core CSS -->
+<link href="/css/front/style.css" rel="stylesheet">

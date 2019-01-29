@@ -1,47 +1,22 @@
-<script src="/js/vendor.min.js"></script>
-<script src="/js/scripts.min.js"></script>
-<script src="/js/bootstrap-notify.min.js"></script>
-<script src="/js/jquery.ui.shake.min.js"></script>
-<script src="/js/addToCart.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-
-<script>
-    //NO REMOVER
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-        }
-    });
-    $('#form-newsletter').on('submit', function (e) {
-        e.preventDefault();
-        var $form = $(this);
-        // $form.find('i').attr('class', 'fa fa-span fa-spinner');
-        $.ajax({
-            url: $form.attr('action'),
-            type: $form.attr('method'),
-            data: $form.serialize(),
-            success: function () {
-                // $form.find('i').attr('class', 'fa fa-arrow-circle-o-right');
-                $form.find('input').val('')
-                // $.notify({message: 'Muchas gracias por suscribirse' },{type: 'success'});
-            },
-            error: function (response) {
-                // $form.find('i').attr('class', 'fa fa-arrow-circle-o-right');
-                $.notify({message: response.responseJSON.errors['email'][0]},{type: 'danger'});
-            }
-        })
-    });
-
-
-
-</script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-{{-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109425651-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109425651-1');
-</script> --}}
+<!-- Javascript files -->
+<script src="js/front/jquery-2.2.4.min.js"></script>
+<script src="bo/frontotstrap/js/bootstrap.min.js"></script>
+<script src="js/front/jquery.superslides.min.js"></script>
+<script src="js/front/jquery.mb.YTPlayer.min.js"></script>
+<script src="js/front/jquery.magnific-popup.min.js"></script>
+<script src="js/front/owl.carousel.min.js"></script>
+<script src="js/front/jquery.simple-text-rotator.min.js"></script>
+<script src="js/front/imagesloaded.pkgd.js"></script>
+<script src="js/front/isotope.pkgd.min.js"></script>
+<script src="js/front/packery-mode.pkgd.min.js"></script>
+<script src="js/front/appear.js"></script>
+<script src="js/front/jquery.easing.1.3.js"></script>
+<script src="js/front/wow.min.js"></script>
+<script src="js/front/jqBootstrapValidation.js"></script>
+<script src="js/front/jquery.fitvids.js"></script>
+<script src="js/front/jquery.parallax-1.1.3.js"></script>
+<script src="js/front/smoothscroll.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="js/front/gmaps.js"></script>
+<script src="js/front/contact.js"></script>
+<script src="js/front/custom.js"></script>
