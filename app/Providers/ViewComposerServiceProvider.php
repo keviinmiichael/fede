@@ -20,29 +20,29 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         //admin
-        view()->composer('admin/*/form*', 'App\Http\ViewComposers\FormComposer');
+        // view()->composer('admin/*/form*', 'App\Http\ViewComposers\FormComposer');
 
         //front
-        view()->composer('front/partials/home/slider', function ($view)
-        {
-            $view->with('sliderHome', \App\Slider::home()->images);
-        });
+        // view()->composer('front/partials/home/slider', function ($view)
+        // {
+        //     $view->with('sliderHome', \App\Slider::home()->images);
+        // });
 
-        view()->composer('front/partials/navbar', function ($view)
-        {
-            $categories = \App\Category::orderBy('value')->with('subcategories')->get();
-            $view->with('categories', $categories);
-        });
-
-        view()->composer('front/partials/footer', function ($view)
-        {
-            $view->with('categories', \App\Category::orderBy('value')->get());
-        });
-
-        view()->composer('front/products/index', function ($view)
-        {
-            $view->with('categories', \App\Category::with('subcategories')->orderBy('value')->get());
-        });
+        // view()->composer('front/partials/navbar', function ($view)
+        // {
+        //     $categories = \App\Category::orderBy('value')->with('subcategories')->get();
+        //     $view->with('categories', $categories);
+        // });
+        //
+        // view()->composer('front/partials/footer', function ($view)
+        // {
+        //     $view->with('categories', \App\Category::orderBy('value')->get());
+        // });
+        //
+        // view()->composer('front/products/index', function ($view)
+        // {
+        //     $view->with('categories', \App\Category::with('subcategories')->orderBy('value')->get());
+        // });
     }
 
     /**
